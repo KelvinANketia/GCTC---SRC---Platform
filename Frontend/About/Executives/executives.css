@@ -1,0 +1,369 @@
+.inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+    background-color: transparent;
+}
+
+.home-post {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 300px;
+    color: hsl(0 0% 98%);
+    background-image: linear-gradient(135deg, hsl(200 95% 20%), hsl(200 95% 27%), hsl(45 100% 51%));
+
+    .hp-head {
+        position: absolute;
+        top: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: max-content;
+        height: 100px;
+        background-color: transparent;
+        opacity: 0;
+
+        transition: all 0.7s ease;
+
+        h1 {
+            font-family: 'Montserrat';
+            font-size: 4em;
+            font-weight: bolder;
+            letter-spacing: 0.5px;
+        }
+    }
+
+    .hp-sub {
+        position: absolute;
+        bottom: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 580px;
+        height: 100px;
+        background-color: transparent;
+
+        transition: all 0.6s ease;
+
+        p {
+            font-size: 1em;
+            font-weight: 500;
+            line-height: 1.8;
+        }
+    }
+}
+
+.ex-members {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: calc(100% - 90px);
+    height: max-contentqqq;
+    background-color: white;
+    padding: 65px 45px;
+    row-gap: 55px;
+
+    .ex-member-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+        width: 47.5%;
+        height: 325px;
+        background-color: transparent;
+        border: 1.5px solid hsl(0 0% 80%);
+        overflow: hidden;
+        cursor: default;
+
+        transition: all 0.3s ease;
+
+        .emc-head {
+            display: flex;
+            align-items: center;
+            width: calc(100% - 40px);
+            height: 105px;
+            background-color: transparent;
+            border-radius: 9px 9px 0 0;
+            padding: 0 20px;
+            gap: 20px;
+            overflow: hidden;
+
+            .em-profile-picture {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 70px;
+                height: 70px;
+                border-radius: 50%;
+                background-image: linear-gradient(135deg, hsl(200 95% 27%), hsl(200 95% 40%));
+                margin-top: 5px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .em-info {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: 85%;
+                height: 100%;
+                background-color: transparent;
+
+                .em-info-name {
+                    position: absolute;
+                    top: 20px;
+                    display: flex;
+                    text-align: left;
+                    width: max-content;
+                    height: max-content;
+
+                    font-family: 'Poppins';
+                    font-weight: 650;
+                    font-size: 1.1em;
+                    color: rgba(0, 0, 0, 0.95);
+                    letter-spacing: 0.5px;
+                }
+
+                .em-info-role {
+                    position: absolute;
+                    top: 46.5px;
+                    display: flex;
+                    text-align: left;
+                    width: max-content;
+                    height: max-content;
+
+                    font-family: 'Poppins';
+                    font-weight: 600;
+                    font-size: 0.8em;
+                    color: rgba(7, 60, 151, 0.98);
+                    letter-spacing: 0.5px;
+                }
+
+                .em-info-tenure {
+                    position: absolute;
+                    top: 70px;
+                    left: -1px;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                    width: max-content;
+                    height: 20px;
+                    background-color: transparent;
+                    gap: 5px;
+
+                    .tenure-icon {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: max-content;
+                        height: max-content;
+                        margin-top: -1px;
+
+                        img {
+                            width: 14px;
+                            height: 14px;
+                            opacity: 0.45;
+                        }
+                    }
+
+                    .tenure-date {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: max-content;
+                        height: 100%;
+
+                        span {
+                            font-family: 'Poppins';
+                            font-weight: 400;
+                            font-size: 0.73em;
+                            color: rgba(0, 0, 0, 0.65);
+                        }
+                    }
+                }
+            }
+        }
+
+        .emc-body {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 40px);
+            height: 142px;
+            background-color: transparent;
+
+            .em-description {
+                position: absolute;
+                top: 5px;
+                width: 100%;
+                height: max-content;
+                margin: 0;
+
+                font-family: 'Poppins';
+                font-weight: 400;
+                font-size: 0.88em;
+                line-height: 1.6;
+                overflow: hidden;
+                color: rgba(0, 0, 0, 0.65);
+
+                background-color: transparent;
+            }
+
+            .em-achievements {
+                position: absolute;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 56px;
+                background-color: transparent;
+
+                .em-achievements-title {
+                    position: absolute;
+                    top: 0;
+                    font-family: 'Poppins';
+                    font-weight: 600;
+                    font-size: 0.85em;
+                    color: rgba(0, 0, 0, 0.8);
+                }
+
+                .em-achievements-list {
+                    position: absolute;
+                    bottom: 5px;
+                    display: flex;
+                    width: 100%;
+                    height: 18px;
+                    gap: 8px;
+
+                    span {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: max-content;
+                        height: 100%;
+                        font-family: 'Poppins';
+                        font-weight: 550;
+                        font-size: 0.7em;
+                        color: hsl(200, 95%, 27%);
+                        padding: 1px 10px;
+                        background-color: hsl(200, 95%, 95%);
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+
+        .emc-footer {
+            position: absolute;
+            bottom: 22px;
+            display: flex;
+            align-items: center;
+            width: calc(100% - 40px);
+            height: 38px;
+            background-color: transparent;
+            gap: 15px;
+
+            .emc-contact {
+                position: relative;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                border: 1px solid hsl(0, 0%, 85%);
+                outline: none;
+                background-color: transparent;
+                border-radius: 12px;
+                cursor: pointer;
+
+                transition: all 0.2s ease;
+
+                .contact-icon {
+                    position: absolute;
+                    left: 12px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: max-content;
+                    height: max-content;
+                    background-color: transparent;
+
+                    img {
+                        width: 18px;
+                        height: 18px;
+                        opacity: 0.55;
+                    }
+
+                    svg {
+                        opacity: 0.55;
+                    }
+                }
+
+                .contact-type {
+                    position: absolute;
+                    right: 15px;
+                    display: flex;
+                    width: max-content;
+                    height: max-content;
+                    cursor: pointer;
+
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    font-size: 0.93em;
+                    line-height: 1.6;
+                    overflow: hidden;
+                    color: rgba(0, 0, 0, 0.75);
+                }
+
+                &:hover {
+                    transform: scale(1.01);
+                    border: 1.5px solid hsl(200, 95%, 27%);
+                    background-color: hsl(200, 95%, 98%);
+                }
+
+                &:active {
+                    transform: scale(0.98)
+                }
+            }
+
+            .em-email {
+                width: 90px;
+            }
+
+            .em-phone {
+                width: 95px;
+            }
+
+            .em-linkedin {
+                width: 110px;
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(45, 85, 255, 0.05);
+        }
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100px;
+    }
+
+    60% {
+        left: 100%;
+    }
+
+    to {
+        left: 100%;
+    }
+}

@@ -86,11 +86,10 @@ body {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 250vh;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: rgba(0, 0, 0, 0.02);
-    /* background-color: #0249c4; */
 }
 
 nav {
@@ -238,16 +237,47 @@ nav {
                 top: 65px;
                 left: 0;
                 display: none;
-                width: 250%;
-                height: 150px;
+                flex-direction: column;
+                align-items: center;
+                width: 225px;
+                height: max-content;
                 background-color: #fff;
                 border: 1px solid hsl(220 13% 91%);
                 border-top: none;
                 border-radius: 0 0 3px 3px;
+                padding: 10px 0;
+
+                gap: 5px;
 
                 cursor: default;
 
                 transition: all 0.3s ease;
+
+                .menu-dd-option {
+                    display: flex;
+                    align-items: center;
+                    width: calc(90% - 25px);
+                    height: 20px;
+                    text-decoration: none;
+                    outline: none;
+                    overflow: hidden;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px 6px 8px 15px;
+
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 0.8em;
+                    font-weight: 500;
+                    color: rgba(0, 0, 0, 0.85);
+                    letter-spacing: 0.5px;
+
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        background-color: hsl(220, 13%, 91%);
+                        color: hsl(200, 95%, 27%);
+                    }
+                }
             }
 
             &:hover {
@@ -257,6 +287,7 @@ nav {
                 span {
                     transition: all 0.5s ease;
                     font-size: 0.9em;
+                    color: hsl(200 95% 27%);
                 }
 
                 .menu-dd {
@@ -309,63 +340,6 @@ nav {
             text-align: center;
             outline: none;
             border: none;
-        }
-
-        .fb {
-            position: absolute;
-            left: 1px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 36px;
-            width: calc(100% - 105px);
-            background-color: transparent;
-            gap: 12px;
-            box-sizing: border-box;
-
-            border-radius: 50px;
-            border: 3px solid transparent;
-
-            transition: all 0.2s ease;
-
-            div {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: 20px;
-                height: 20px;
-                background-color: transparent;
-                margin-top: -1px;
-
-                img {
-                    width: 15px;
-                    height: 16px;
-                    opacity: 0.8;
-                }
-            }
-
-            span {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                width: max-content;
-                height: max-content;
-
-                font-family: 'Poppins', sans-serif;
-                font-size: 12px;
-                font-weight: 550;
-                letter-spacing: 1px;
-                color: rgba(0, 0, 0, 0.85);
-
-                background-color: transparent;
-
-                cursor: pointer;
-            }
-
-            &:hover {
-                cursor: pointer;
-                background-color: rgba(0, 0, 0, 0.1);
-            }
         }
 
         .j-src {
@@ -422,13 +396,153 @@ nav {
             align-items: center;
             width: 38px;
             height: 38px;
-            background-color: red;
+            background-color: transparent;
             border-radius: 10px;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: hsl(220, 13%, 91%);
+                border: 1px solid hsl(220, 13%, 91%);
+            }
         }
     }
 }
 
-@media (max-width: 1250px) {
+.fb {
+    position: fixed;
+    left: 15px;
+    bottom: 15px;
+    display: flex;
+    align-items: center;
+    height: 38px;
+    width: 38px;
+    background-color: rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+
+    border-radius: 25px;
+    border: 3px solid transparent;
+
+    transition: all 0.3s ease;
+
+    z-index: 9999;
+
+    div {
+        position: absolute;
+        left: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        height: max-content;
+        background-color: transparent;
+        margin-top: -1px;
+
+        transition: all 0.3s ease;
+
+
+        img {
+            width: 17px;
+            height: 17px;
+            opacity: 0.4;
+        }
+    }
+
+    span {
+        position: absolute;
+        right: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        height: max-content;
+
+        font-family: 'Poppins', sans-serif;
+        font-size: 12px;
+        font-weight: 550;
+        letter-spacing: 1px;
+        color: rgba(0, 0, 0, 0.9);
+
+        background-color: transparent;
+
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(0, 0, 0, 0.35);
+        width: 135px;
+
+        div {
+            left: 18px;
+
+            img {
+                opacity: 0.8;
+            }
+        }
+
+        span {
+            transition: all 0.8s ease;
+            opacity: 1;
+            pointer-events: auto;
+            cursor: pointer;
+        }
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.chatbot-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-image: linear-gradient(135deg, hsl(200 95% 27%), hsl(200 95% 40%));
+
+    transition: all 0.4s ease;
+
+    z-index: 9999;
+
+    .chatbot-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        width: max-content;
+        height: max-content;
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.04);
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+@media (max-width: 1185px) {
 
     .nav-mid {
         display: none !important;

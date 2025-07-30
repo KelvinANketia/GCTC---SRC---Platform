@@ -78,6 +78,19 @@ const setupFileServing = (app, cacheMiddleware) => {
         response.sendFile(filePath);
     });
 
+    app.get("/executives", (request, response) => {
+        const filePath = path.join(
+            __dirname,
+            "..",
+            "..",
+            "Frontend",
+            "About",
+            "Executives",
+            "executives.html",
+        );
+        response.sendFile(filePath);
+    });
+
     // Error handling middleware
     app.use((error, request, response, next) => {
         if (error instanceof Error && error.code === "ENOENT") {
