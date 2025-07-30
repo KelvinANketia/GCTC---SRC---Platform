@@ -84,7 +84,6 @@ body {
         align-items: center;
         border-radius: 10px;
         width: 47.5%;
-        min-width: 450px;
         height: 325px;
         background-color: transparent;
         border: 1.5px solid hsl(0 0% 80%);
@@ -622,5 +621,13 @@ body {
     .ex-member-card {
         height: 350px !important;
     }
+
+}
+
+@media (max-width: 500px) {
+
+    /* .ex-member-card {
+        min-width: 250px !important;
+    } */
 
 }
