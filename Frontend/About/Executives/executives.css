@@ -1,3 +1,7 @@
+body {
+    height: 350vh;
+}
+
 .inner {
     display: flex;
     flex-direction: column;
@@ -33,7 +37,7 @@
 
         h1 {
             font-family: 'Montserrat';
-            font-size: 4em;
+            font-size: clamp(2.2em, 5vw, 4em);
             font-weight: bolder;
             letter-spacing: 0.5px;
         }
@@ -43,6 +47,7 @@
         position: absolute;
         bottom: 50px;
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -53,7 +58,9 @@
         transition: all 0.6s ease;
 
         p {
-            font-size: 1em;
+            display: flex;
+            flex-wrap: wrap;
+            font-size: clamp(0.8em, 3vw, 1em);
             font-weight: 500;
             line-height: 1.8;
         }
@@ -65,9 +72,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: calc(100% - 90px);
-    height: max-contentqqq;
+    height: max-content;
     background-color: white;
-    padding: 65px 45px;
+    padding: 65px 45px 60px 45px;
     row-gap: 55px;
 
     .ex-member-card {
@@ -77,6 +84,7 @@
         align-items: center;
         border-radius: 10px;
         width: 47.5%;
+        min-width: 450px;
         height: 325px;
         background-color: transparent;
         border: 1.5px solid hsl(0 0% 80%);
@@ -242,6 +250,7 @@
                     position: absolute;
                     bottom: 5px;
                     display: flex;
+                    flex-wrap: wrap;
                     width: 100%;
                     height: 18px;
                     gap: 8px;
@@ -354,6 +363,216 @@
     }
 }
 
+.em-pro-members {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    background-color: white;
+
+    .empm-title {
+        position: absolute;
+        top: 0;
+        display: flex;
+        width: max-content;
+        height: max-content;
+        margin: 0;
+
+        font-family: 'Poppins';
+        font-size: 2.1em;
+        font-weight: 1000;
+        opacity: 0.8;
+        background-color: transparent;
+    }
+
+    .ex-pro-member-card {
+        position: absolute;
+        bottom: 60px;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        width: 60%;
+        height: 290px;
+        background-color: transparent;
+        border: 1.5px solid hsl(0 0% 80%);
+        overflow: hidden;
+        cursor: default;
+
+        .epm-profile-left {
+            position: absolute;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 190px;
+            height: 100%;
+            border-radius: 9px 0 0 9px;
+            background-color: transparent;
+
+            .emp-profile-picture {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 108px;
+                height: 108px;
+                border-radius: 50%;
+                background-image: linear-gradient(135deg, hsl(200 95% 27%), hsl(200 95% 40%));
+                margin-top: 5px;
+
+                img {
+                    width: 48px;
+                    height: 48px;
+                }
+            }
+        }
+
+        .epm-profile-info {
+            position: absolute;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 190px);
+            height: 100%;
+            background-color: transparent;
+            border-radius: 0 9px 9px 0;
+
+            .epm-info-name {
+                position: absolute;
+                top: 40px;
+                display: flex;
+                text-align: left;
+                width: max-content;
+                height: max-content;
+
+                font-family: 'Poppins';
+                font-size: 1.55em;
+                font-weight: 1000;
+                color: rgba(0, 0, 0, 0.85);
+                letter-spacing: 0.5px;
+            }
+
+            .epm-info-role {
+                position: absolute;
+                top: 90px;
+                display: flex;
+                text-align: left;
+                width: max-content;
+                height: max-content;
+
+                font-family: 'Poppins';
+                font-weight: 700;
+                font-size: 0.85em;
+                color: rgba(7, 60, 151, 0.98);
+                letter-spacing: 0.5px;
+            }
+
+            .epm-description {
+                position: absolute;
+                top: 125px;
+                max-width: 95%;
+                height: max-content;
+                margin: 0;
+
+                font-family: 'Poppins';
+                font-weight: 400;
+                font-size: 0.88em;
+                line-height: 1.6;
+                overflow: hidden;
+                color: rgba(0, 0, 0, 0.65);
+
+                background-color: transparent;
+            }
+
+            .epm-footer {
+                position: absolute;
+                bottom: 35px;
+                display: flex;
+                align-items: center;
+                width: 100%;
+                height: 38px;
+                background-color: transparent;
+                gap: 20px;
+
+                .epm-contact {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+                    border: 1px solid hsl(0, 0%, 85%);
+                    outline: none;
+                    background-color: transparent;
+                    border-radius: 12px;
+                    cursor: pointer;
+
+                    transition: all 0.2s ease;
+
+                    .contact-icon {
+                        position: absolute;
+                        left: 12px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        width: max-content;
+                        height: max-content;
+                        background-color: transparent;
+
+                        img {
+                            width: 18px;
+                            height: 18px;
+                            opacity: 0.55;
+                        }
+
+                        svg {
+                            opacity: 0.55;
+                        }
+                    }
+
+                    .contact-type {
+                        position: absolute;
+                        right: 15px;
+                        display: flex;
+                        width: max-content;
+                        height: max-content;
+                        cursor: pointer;
+
+                        font-family: 'Poppins';
+                        font-weight: 400;
+                        font-size: 0.93em;
+                        line-height: 1.6;
+                        overflow: hidden;
+                        color: rgba(0, 0, 0, 0.75);
+                    }
+
+                    &:hover {
+                        transform: scale(1.01);
+                        border: 1.5px solid hsl(200, 95%, 27%);
+                        background-color: hsl(200, 95%, 98%);
+                    }
+
+                    &:active {
+                        transform: scale(0.98)
+                    }
+                }
+
+                .epm-email {
+                    width: 150px;
+                }
+
+                .epm-meeting {
+                    width: 185px;
+                }
+            }
+        }
+
+        &:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(45, 85, 255, 0.05);
+        }
+    }
+}
+
 @keyframes shine {
     0% {
         left: -100px;
@@ -366,4 +585,42 @@
     to {
         left: 100%;
     }
+}
+
+@media (max-width: 1318px) {
+
+    body {
+        height: 450vh;
+    }
+
+    .ex-member-card {
+        height: 360px !important;
+    }
+
+}
+
+@media (max-width: 1145px) {
+
+    .ex-member-card {
+        width: 100% !important;
+        height: 325px !important;
+    }
+
+    .ex-pro-member-card {
+        width: calc(100% - 90px) !important;
+    }
+
+}
+
+@media (max-width: 682px) {
+
+    .hp-sub {
+        width: 70% !important;
+        font-size: 0.9em !important;
+    }
+
+    .ex-member-card {
+        height: 350px !important;
+    }
+
 }

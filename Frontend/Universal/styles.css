@@ -86,7 +86,6 @@ body {
     flex-direction: column;
     position: relative;
     width: 100%;
-    height: 250vh;
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background-color: rgba(0, 0, 0, 0.02);
@@ -410,6 +409,112 @@ nav {
                 border: 1px solid hsl(220, 13%, 91%);
             }
         }
+
+        .side-menu {
+            position: absolute;
+            top: 58px;
+            right: -70px;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            width: 330px;
+            height: max-content;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(4px);
+            border: 1px solid hsl(220 13% 91%);
+            border-top: none;
+            border-radius: 0 0 3px 3px;
+            padding: 20px 0;
+            gap: 5px;
+
+            transition: all 0.1s ease;
+
+            .side-menu-option {
+                display: flex;
+                align-items: center;
+                width: calc(90% - 25px);
+                height: 25px;
+                text-decoration: none;
+                outline: none;
+                overflow: hidden;
+                border-radius: 8px;
+                background-color: transparent;
+                padding: 8px 6px 8px 15px;
+
+                transition: all 0.3s ease;
+                font-family: 'Poppins';
+                font-weight: 400;
+                font-size: 0.88em;
+                letter-spacing: 0.5px;
+                line-height: 1.6;
+                color: rgba(0, 0, 0, 0.85);
+
+                &:hover {
+                    color: hsl(200 95% 27%);
+                    background-color: hsla(220, 13%, 91%, 0.75);
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+
+            .sm-dd {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                width: calc(90% - 25px);
+                height: max-content;
+                border-radius: 8px;
+                background-color: transparent;
+                padding: 8px 6px 8px 15px;
+                gap: 15px;
+
+                span {
+                    display: flex;
+                    width: max-content;
+                    height: 25px;
+                    transition: all 0.3s ease;
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    font-size: 0.9em;
+                    letter-spacing: 0.5px;
+                    line-height: 1.6;
+                    color: rgba(0, 0, 0, 0.85);
+
+                    background-color: transparent;
+                }
+
+                .sm-dd-option {
+                    display: flex;
+                    align-items: center;
+                    width: calc(100% - 28px);
+                    height: 25px;
+                    text-decoration: none;
+                    outline: none;
+                    overflow: hidden;
+                    background-color: transparent;
+                    padding-left: 20px;
+                    transition: all 0.3s ease;
+
+                    font-family: 'Poppins';
+                    font-weight: 400;
+                    font-size: 0.85em;
+                    letter-spacing: 0.5px;
+                    line-height: 1.6;
+                    color: rgba(0, 0, 0, 0.65);
+
+                    &:hover {
+                        color: hsl(200 95% 27%);
+                    }
+                }
+            }
+        }
+
+        .side-menu.closed {
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 }
 
@@ -465,7 +570,7 @@ nav {
         font-size: 12px;
         font-weight: 550;
         letter-spacing: 1px;
-        color: rgba(0, 0, 0, 0.9);
+        color: rgba(0, 0, 0, 0.95);
 
         background-color: transparent;
 
@@ -476,13 +581,15 @@ nav {
     &:hover {
         cursor: pointer;
         background-color: rgba(0, 0, 0, 0.35);
+        background-color: hsla(220, 13%, 91%, 0.9);
+        border: 2px solid hsl(200, 95%, 27%);
         width: 135px;
 
         div {
             left: 18px;
 
             img {
-                opacity: 0.8;
+                opacity: 0.85;
             }
         }
 
@@ -554,6 +661,18 @@ nav {
         .tg-menu {
             display: flex !important;
         }
+
+        .side-menu {
+            display: flex !important;
+        }
+    }
+
+}
+
+@media (max-width: 680px) {
+
+    .j-src {
+        display: none !important;
     }
 
 }
