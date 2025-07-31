@@ -60,4 +60,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function shouldCloseSideMenu(isSideMenuOpen, isClickOutsideSideMenu, isClickOutsideMenuOptions) {
         return isSideMenuOpen && isClickOutsideSideMenu && isClickOutsideMenuOptions;
     }
+
+    document.querySelectorAll('.j-src').forEach(btn => {
+        btn.addEventListener('click', function () {
+            window.location.href = '/internships';
+        });
+    });
 });
