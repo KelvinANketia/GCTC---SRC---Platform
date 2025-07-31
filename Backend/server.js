@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const { cacheMiddleware } = require("./middleware/cache.js");
-// const setupMiddleware = require("./middleware/main.js");
+const setupMiddleware = require("./middleware/main.js");
 const setupFileServing = require("./routes/static-serve.js");
 const { redisClient } = require("./config/redis-client.js");
 
@@ -18,7 +18,7 @@ const { redisClient } = require("./config/redis-client.js");
 setupFileServing(app, cacheMiddleware);
 
 // Main middleware setup
-// setupMiddleware(app);
+setupMiddleware(app);
 
 async function startServer() {
     try {
